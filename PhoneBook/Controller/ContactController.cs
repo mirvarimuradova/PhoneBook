@@ -91,6 +91,38 @@ namespace PhoneBook.Controller
 
         }
        
+        public void GetAllContact()
+        {
+          List<Contact> contacts = bll.GetContactList();
 
+            foreach (Contact contact in contacts)
+            {
+                Console.WriteLine($"Id: {contact.Id}");
+                Console.WriteLine($"Name: {contact.Name}");
+                Console.WriteLine($"Surname: {contact.Surname}");
+                Console.WriteLine($"Phone: {contact.Phone}");
+                Console.WriteLine($"Email: {contact.Email}");
+
+            }
+
+
+
+        }
+
+        public void UpdateContactName(string newvalue, int id)
+        {
+            bll.UpdateName(newvalue, id);
+
+        }
+
+        public void UpdateContactPhone(string newvalue, int id)
+        {
+            bll.UpdatePhone(newvalue, id);
+        }
+
+        public void DeleteContact(int id)
+        {
+            bll.DeleteContact(id);
+        }
     }
 }
